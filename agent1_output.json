@@ -1,0 +1,58 @@
+{
+  "title": "Memory's Edge",
+  "genre": "Science Fiction",
+  "logline": "In a near-future Tokyo, a memory editor must choose between destroying her life\u2019s work or weaponizing it again to free humanity from corporate control, while being hunted by a conflicted corporate enforcer.",
+  "characters": [
+    {
+      "name": "Dr. Yuki Tanaka",
+      "role": "protagonist",
+      "description": "An skilled underground memory editor with a morally complex past, determined to find a cure for mind control.",
+      "motivation": "To create a memory vaccine and free minds from corporate manipulation.",
+      "arc": "She evolves from a clandestine healer to a savior, risking her career and life for a greater cause."
+    },
+    {
+      "name": "Victor",
+      "role": "antagonist",
+      "description": "A corporate enforcer haunted by his orders, loyal to NeuroSync but conflicted about his actions.",
+      "motivation": "To eliminate Yuki and suppress the memory technology to serve NeuroSync\u2019s interests.",
+      "arc": "He struggles with his conscience and the orders he's been given, leading to potential rebellion."
+    },
+    {
+      "name": "Dr. Chen",
+      "role": "supporting",
+      "description": "A reclusive, paranoid scientist who designed the original memory tech, in hiding after NeuroSync stole his research.",
+      "motivation": "To protect his invention and prevent it from being used for control.",
+      "arc": "He transitions from a broken recluse to a willing ally in the fight against oppression."
+    },
+    {
+      "name": "Kai",
+      "role": "supporting",
+      "description": "A street-smart info broker with perfect, trauma-immune memory who seeks to forget his pain.",
+      "motivation": "To gain the ability to forget and find peace.",
+      "arc": "He moves from seeking personal relief to becoming a key player in the fight for mental freedom."
+    }
+  ],
+  "setting": {
+    "time_period": "near-future Tokyo",
+    "location": "urban high-tech city with underground resistance scenes",
+    "atmosphere": "A tense and gritty atmosphere filled with moral ambiguity, neon-lit streets, and clandestine tech battles."
+  },
+  "plot": {
+    "hook": "Yuki is approached by Victor to erase his memory of a crime he is about to commit.",
+    "conflict": "Yuki refuses to comply, leading Victor to reveal his true allegiance to NeuroSync and their hunt for her.",
+    "stakes": "If she fails, NeuroSync\u2019s control over humanity could become irreversible; if she succeeds, her life and the future of free will hang in balance.",
+    "resolution_hint": "Yuki seeks out Dr. Chen for a memory vaccine as the climax, leaving open whether she destroys or refines her technology."
+  },
+  "themes": [
+    "the ethics of memory manipulation",
+    "individual freedom versus corporate control",
+    "the moral ambiguity of technological progress",
+    "the quest for identity and redemption"
+  ],
+  "unique_elements": [
+    "advanced neural hacking technology",
+    "a genetically immune individual who remembers everything",
+    "a hidden underground resistance network in Tokyo",
+    "moral dilemmas of technological empowerment and suppression"
+  ]
+}
