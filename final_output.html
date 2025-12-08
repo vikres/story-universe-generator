@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Story Bible - Memories of Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fredoka+One&family=Poppins:wght@900&family=Righteous&display=swap" rel="stylesheet">
+<style>
+@keyframes rainbow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(5deg); }
+  66% { transform: translateY(15px) rotate(-5deg); }
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+body {
+  margin: 0;
+  padding: 40px;
+  font-family: 'Comfortaa', cursive;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255,0,110,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(131,56,236,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(58,134,255,0.3) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.bocconi-logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  z-index: 1000;
+  animation: spin 20s linear infinite, pulse 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.5), inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+.bocconi-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding: 40px 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 5px solid;
+  border-image: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5) 1;
+  box-shadow: 0 0 50px rgba(255,255,255,0.3);
+}
+
+h1 {
+  font-size: 4.5em;
+  font-weight: 900;
+  margin-bottom: 20px;
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(45deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b, #fb5607);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite, bounce 2s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255,255,255,0.5);
+  letter-spacing: 5px;
+  transform: perspective(500px) rotateX(10deg);
+}
+
+.genre-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff006e, #8338ec);
+  color: #fff;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  animation: pulse 2s ease-in-out infinite, wiggle 3s ease-in-out infinite;
+  box-shadow: 0 0 30px rgba(255,0,110,0.6);
+  border: 3px solid #fff;
+  font-family: 'Righteous', cursive;
+}
+
+.logline {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3), inset 0 0 20px rgba(255,255,255,0.1);
+  font-size: 1.4em;
+  font-style: italic;
+  margin-top: 30px;
+  border: 3px dashed rgba(255,255,255,0.5);
+  animation: float 6s ease-in-out infinite;
+  backdrop-filter: blur(5px);
+  font-weight: 700;
+}
+
+section {
+  margin-bottom: 80px;
+  position: relative;
+  padding: 40px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 4px solid rgba(255,255,255,0.3);
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 900;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(45deg, #fff, #ff006e, #8338ec, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 2s ease infinite, shake 0.5s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+  position: relative;
+}
+
+h2::after {
+  content: '✨';
+  position: absolute;
+  right: -50px;
+  top: 0;
+  font-size: 0.8em;
+  animation: spin 3s linear infinite;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.character-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+  border-radius: 25px;
+  padding: 25px;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border: 3px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.character-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: spin 3s linear infinite;
+}
+
+.character-card:hover {
+  transform: translateY(-15px) rotate(2deg) scale(1.05);
+  box-shadow: 0 20px 50px rgba(255,0,110,0.5);
+  border-color: #ff006e;
+}
+
+.character-name {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  font-weight: 900;
+  font-family: 'Righteous', cursive;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.9em;
+  font-weight: 900;
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: bounce 2s ease-in-out infinite;
+  border: 2px solid rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+}
+
+.role-protagonist { 
+  background: linear-gradient(135deg, #ffbe0b, #fb5607);
+  animation-delay: 0s;
+}
+.role-antagonist { 
+  background: linear-gradient(135deg, #ff006e, #8338ec);
+  animation-delay: 0.5s;
+}
+.role-supporting { 
+  background: linear-gradient(135deg, #3a86ff, #06ffa5);
+  animation-delay: 1s;
+}
+.role-mentor { 
+  background: linear-gradient(135deg, #8338ec, #ff006e);
+  animation-delay: 1.5s;
+}
+.role-love_interest { 
+  background: linear-gradient(135deg, #ff006e, #fb5607);
+  animation-delay: 2s;
+}
+
+.character-details p {
+  margin: 12px 0;
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+.character-details p b {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  color: #ffbe0b;
+  text-shadow: 0 0 10px rgba(255,190,11,0.8);
+  font-family: 'Righteous', cursive;
+}
+
+.setting {
+  background: linear-gradient(135deg, rgba(58,134,255,0.3), rgba(6,255,165,0.3));
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  border: 3px solid rgba(255,255,255,0.4);
+  animation: float 5s ease-in-out infinite;
+}
+
+.setting-item {
+  margin: 15px 0;
+  font-size: 1.2em;
+  padding: 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.setting-item b {
+  color: #ffbe0b;
+  text-shadow: 0 0 10px rgba(255,190,11,0.8);
+  font-family: 'Righteous', cursive;
+  font-size: 1.3em;
+}
+
+.plot {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.plot-item {
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border-left: 8px solid;
+  border-image: linear-gradient(180deg, #ff006e, #8338ec, #3a86ff) 1;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+}
+
+.plot-item:nth-child(1) { animation-delay: 0s; }
+.plot-item:nth-child(2) { animation-delay: 1s; }
+.plot-item:nth-child(3) { animation-delay: 2s; }
+.plot-item:nth-child(4) { animation-delay: 3s; }
+
+.plot-item:hover {
+  transform: translateX(20px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255,0,110,0.4);
+}
+
+.plot-item b {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.4em;
+  font-family: 'Righteous', cursive;
+  background: linear-gradient(45deg, #ff006e, #8338ec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.themes-elements {
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.theme-tag {
+  background: linear-gradient(135deg, #ffbe0b, #fb5607);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 900;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255,190,11,0.5);
+  border: 2px solid rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.theme-tag:nth-child(1) { animation-delay: 0s; }
+.theme-tag:nth-child(2) { animation-delay: 0.5s; }
+.theme-tag:nth-child(3) { animation-delay: 1s; }
+.theme-tag:nth-child(4) { animation-delay: 1.5s; }
+
+.theme-tag:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(255,190,11,0.8);
+}
+
+.unique-elements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.unique-chip {
+  background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+  background-size: 200% 200%;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 900;
+  font-size: 1em;
+  box-shadow: 0 5px 20px rgba(255,0,110,0.5);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255,255,255,0.5);
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: gradient-shift 3s ease infinite, pulse 2s ease-in-out infinite;
+}
+
+.unique-chip:nth-child(1) { animation-delay: 0s; }
+.unique-chip:nth-child(2) { animation-delay: 0.5s; }
+.unique-chip:nth-child(3) { animation-delay: 1s; }
+.unique-chip:nth-child(4) { animation-delay: 1.5s; }
+
+.unique-chip:hover {
+  transform: translateY(-10px) scale(1.1) rotate(-2deg);
+  box-shadow: 0 15px 40px rgba(255,0,110,0.8);
+}
+
+footer {
+  text-align: center;
+  font-size: 2em;
+  color: #fff;
+  margin-top: 80px;
+  padding: 40px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  border: 3px solid rgba(255,255,255,0.3);
+  font-family: 'Righteous', cursive;
+  text-shadow: 0 0 20px rgba(255,255,255,0.8);
+  animation: pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 50px rgba(255,255,255,0.3);
+}
+
+h3 {
+  font-family: 'Righteous', cursive;
+  font-size: 2em;
+  color: #ffbe0b;
+  text-shadow: 0 0 15px rgba(255,190,11,0.8);
+  margin-bottom: 20px;
+  animation: wiggle 2s ease-in-out infinite;
+}
+</style>
+</head>
+<body>
+<div class="bocconi-logo">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="90" fill="#E31837" stroke="#fff" stroke-width="5"/>
+    <text x="100" y="130" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#fff" text-anchor="middle">B</text>
+    <text x="100" y="170" font-family="Arial, sans-serif" font-size="20" fill="#fff" text-anchor="middle">UNIVERSITÀ</text>
+  </svg>
+</div>
+
+<div class="container">
+<header>
+<h1>Memories of Control</h1>
+<div class="genre-badge">Sci-Fi / Thriller</div>
+<div class="logline">"A memory editor must confront her past and the megacorporation controlling memories to prevent a catastrophic crime and free humanity from mental enslavement."</div>
+</header>
+
+<main>
+<section>
+<h2>Characters</h2>
+<div class="characters-grid">
+<div class="character-card">
+<h3 class="character-name">Dr. Yuki Tanaka</h3>
+<div class="role-badge role-protagonist">Protagonist</div>
+<div class="character-details">
+<p><b>Description:</b> A skilled, rebellious memory editor operating underground in Tokyo, haunted by her own past and driven by the desire to help others.</p>
+<p><b>Motivation:</b> To find a way to free minds from corporate control and prevent the impending crime.</p>
+<p><b>Arc:</b> From a lone operator to a leadership figure advocating for mental freedom.</p>
+</div>
+</div>
+<div class="character-card">
+<h3 class="character-name">Victor</h3>
+<div class="role-badge role-antagonist">Antagonist</div>
+<div class="character-details">
+<p><b>Description:</b> A corporate enforcer for NeuroSync, conflicted by his orders and his own lost daughter, aiming to erase Yuki to protect his company.</p>
+<p><b>Motivation:</b> To obey orders and eliminate evidence of heresy, yet secretly hopes for some redemption.</p>
+<p><b>Arc:</b> From a ruthless enforcer to a conflicted man seeking redemption.</p>
+</div>
+</div>
+<div class="character-card">
+<h3 class="character-name">Dr. Chen</h3>
+<div class="role-badge role-supporting">Supporting</div>
+<div class="character-details">
+<p><b>Description:</b> A reclusive scientist who invented the memory technology, now hiding after it was stolen, holding the key to immunity.</p>
+<p><b>Motivation:</b> To recover his research and prevent it from being weaponized again.</p>
+<p><b>Arc:</b> From a paranoid recluse to a reluctant hero.</p>
+</div>
+</div>
+<div class="character-card">
+<h3 class="character-name">Kai</h3>
+<div class="role-badge role-supporting">Supporting</div>
+<div class="character-details">
+<p><b>Description:</b> A street-smart info broker with perfect memory, immune to memory edits, seeking to forget his traumatic past.</p>
+<p><b>Motivation:</b> To find peace and forget the pain of his memories.</p>
+<p><b>Arc:</b> From a man burdened by past trauma to someone who finds acceptance.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Setting</h2>
+<div class="setting">
+<div class="setting-item"><b>Time Period:</b> near-future Tokyo</div>
+<div class="setting-item"><b>Location:</b> Urban dystopia, NeuroSync headquarters, underground clinics</div>
+<div class="setting-item"><b>Atmosphere:</b> A tense, high-tech noir environment, blending neon-lit cityscapes with shadowy, clandestine operations.</div>
+</div>
+</section>
+
+<section>
+<h2>Plot</h2>
+<div class="plot">
+<div class="plot-item">
+<b>Hook:</b> Yuki is approached by Victor, who seeks her help to erase a deadly crime.
+</div>
+<div class="plot-item">
+<b>Conflict:</b> Yuki must choose between aiding Victor or protecting her own life and the freedom of the mind.
+</div>
+<div class="plot-item">
+<b>Stakes:</b> Global control over memories, personal freedom, and the potential for mass manipulation.
+</div>
+<div class="plot-item">
+<b>Resolution Hint:</b> Yuki finds Chen and develops a way to make humans immune to control, deciding whether to destroy or refine her technology for the future.
+</div>
+</div>
+</section>
+
+<section class="themes-elements">
+<h2>Themes &amp; Unique Elements</h2>
+<h3>Themes</h3>
+<div class="themes">
+<div class="theme-tag">the power of memory and identity</div>
+<div class="theme-tag">the ethics of technological control</div>
+<div class="theme-tag">redemption through choice</div>
+<div class="theme-tag">the cost of forgetfulness</div>
+</div>
+<h3>Unique Elements</h3>
+<div class="unique-elements">
+<div class="unique-chip">advanced memory editing technology with real-world ethical dilemmas</div>
+<div class="unique-chip">a genetically immune character who refuses to forget</div>
+<div class="unique-chip">a covert war between corporate control and underground resistance</div>
+<div class="unique-chip">a moral dilemma at the climax about destroying or improving memory tech</div>
+</div>
+</section>
+</main>
+
+<footer>
+Generated by the mighty power of the marvelous Victor LE TERTRE
+</footer>
+</div>
+</body>
+</html>
